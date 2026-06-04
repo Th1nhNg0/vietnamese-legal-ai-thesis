@@ -1,90 +1,83 @@
 # Deep Learning in Legal System: Opportunities and Challenges
 
-> My bachelor thesis on applying AI, deep learning, and information retrieval to Vietnamese legal documents.  
+> My bachelor thesis on applying deep learning, information retrieval, and large language models to Vietnamese legal documents.  
 > Final thesis score: **9.7/10**.
 
-This repository contains the source code, thesis document, and presentation for my bachelor thesis:
+This repository contains the source code, thesis document, images, data files, and presentation for my bachelor thesis.
 
-**Deep Learning in Legal System: Opportunities and Challenges**  
 **Author:** Ngô Phú Thịnh  
 **Major:** Data Science  
 **University:** University of Science, Vietnam National University Ho Chi Minh City  
 **Supervisor:** Assoc. Prof. Dr. Nguyễn Thanh Bình  
 **Year:** 2023
 
-## About This Thesis
+## About
 
-This was my bachelor thesis in Data Science. I researched how modern AI systems, especially large language models and retrieval-based methods, can be applied to the legal domain.
+I built this project because I wanted to explore how AI could make legal information easier to search and understand.
 
-The main idea behind this project was simple: **law should be easier to access and understand**.
-
-In Vietnam, legal documents can be difficult for ordinary users to search, read, and understand. I wanted to explore how AI could support citizens, law students, legal researchers, and lawyers by making legal information retrieval more efficient.
+Legal documents in Vietnam are often hard for normal users to read, search, and connect with real questions. My thesis studies how deep learning, retrieval models, and large language models can support legal information retrieval, especially for Vietnamese legal text.
 
 The thesis has two main parts:
 
-1. A research discussion about the opportunities and challenges of deep learning in legal systems.
-2. Practical experiments on Vietnamese legal document retrieval.
+1. Research on the opportunities and challenges of applying deep learning to legal systems.
+2. Practical experiments for Vietnamese legal document retrieval and legal question answering.
 
-## Thesis Score
+## Visual Overview
 
-I received **9.7/10** for this thesis.
+### Semantic Search
 
-## Main Topics
+![Semantic Search](document/images/SemanticSearch.png)
 
-- Legal AI
-- Large Language Models
-- GPT and ChatGPT
-- Embeddings
-- TF-IDF
-- BM25
-- Sentence Transformers
-- ChromaDB
-- LangChain
-- Open-Domain Question Answering
-- Multimodal AI
-- Vietnamese legal document retrieval
-- AI challenges in law: privacy, cost, hallucination, ethics, and reliability
+### Chroma Vector Database
+
+![Chroma Vector Database](document/images/chroma.svg)
+
+### Legal Document Database Structure
+
+![Legal Document Database Structure](document/images/csdl.svg)
+
+### Question Distribution by Legal Field
+
+![Question Distribution by Legal Field](document/images/cauhoitheolinhvuc.svg)
+
+### Retrieval Pipeline
+
+![Retrieval Pipeline](document/images/diagram.svg)
 
 ## What I Built
 
-The practical part of the thesis focused on building and testing a retrieval system for Vietnamese legal documents.
-
-Main components:
-
-### 1. Vietnamese Legal Document Dataset
+### Vietnamese Legal Document Dataset
 
 I collected and processed Vietnamese legal normative documents, mainly related to social insurance.
 
-### 2. Legal Document Database
+### Legal Document Database
 
 I designed a database structure to store:
 
-- Legal documents
-- Document metadata
-- Table of contents
-- Relationships between legal documents
-- Processed legal text
+- legal documents
+- document metadata
+- table of contents
+- relationships between legal documents
+- processed legal text
 
-### 3. Vietnamese Legal Question-Answering Dataset
+### Vietnamese Legal Question-Answering Dataset
 
 I prepared legal Q&A data for retrieval experiments and fine-tuning.
 
-### 4. Information Retrieval Experiments
+### Retrieval Experiments
 
-I tested several retrieval methods:
+I tested several information retrieval methods:
 
 - TF-IDF
 - BM25
-- Dense embedding retrieval
+- dense embedding retrieval
 - Instructor Embedding models
-- Fine-tuned Instructor Embedding model
+- fine-tuned Instructor Embedding model
 - ChromaDB vector search
 
 ## Key Result
 
-One important result was that fine-tuning significantly improved retrieval performance.
-
-In the second retrieval approach, the original Instructor models performed poorly on the Vietnamese legal dataset. After fine-tuning, the Instructor Base model achieved much better results.
+Fine-tuning significantly improved retrieval performance on Vietnamese legal text.
 
 | Model | Top 5 Accuracy | Top 10 Accuracy | Top 20 Accuracy | Top 50 Accuracy |
 |---|---:|---:|---:|---:|
@@ -96,17 +89,49 @@ In the second retrieval approach, the original Instructor models performed poorl
 
 This showed that domain-specific fine-tuning can greatly improve retrieval quality, even with limited hardware and a smaller model.
 
+## Main Topics
+
+- Legal AI
+- Vietnamese NLP
+- Large Language Models
+- GPT and ChatGPT
+- Embeddings
+- TF-IDF
+- BM25
+- Sentence Transformers
+- ChromaDB
+- LangChain
+- Open-Domain Question Answering
+- Multimodal AI
+- Vietnamese legal document retrieval
+- Privacy, cost, hallucination, ethics, and reliability in legal AI
+
 ## Repository Structure
 
 ```txt
 .
-├── code/                         # Source code and experiments
-├── document/                     # Thesis document and related files
-├── presentation-slide.pptx       # Thesis presentation
-└── readme.md                     # Repository overview
+├── code/
+│   ├── law_query/
+│   ├── law_query_private/
+│   ├── paper/
+│   ├── 0.eda.ipynb
+│   ├── 1.process.ipynb
+│   ├── 2.answers_process.ipynb
+│   ├── 3.chromadb.ipynb
+│   ├── 4.finetune_model.ipynb
+│   └── 5.inference.py
+├── document/
+│   ├── content/
+│   ├── data/
+│   ├── images/
+│   ├── main.typ
+│   ├── ref.bib
+│   └── thesis.pdf
+├── LuanVan.pptx
+└── readme.md
 ```
 
-## Technologies Used
+## Technologies
 
 - Python
 - Jupyter Notebook
@@ -121,36 +146,16 @@ This showed that domain-specific fine-tuning can greatly improve retrieval quali
 - Streamlit
 - Typst
 
-## Thesis Document
+## Files
 
-Thesis PDF:
-
-```txt
-document/thesis.pdf
-```
-
-Presentation:
-
-```txt
-LuanVan.pptx
-```
+- Thesis PDF: [`document/thesis.pdf`](document/thesis.pdf)
+- Thesis presentation: [`LuanVan.pptx`](LuanVan.pptx)
+- Main Typst source: [`document/main.typ`](document/main.typ)
+- Code and experiments: [`code/`](code/)
 
 ## Keywords
 
 Vietnamese legal AI, Vietnamese legal question answering, Vietnamese law retrieval, legal information retrieval, Vietnamese NLP, AI for law, legal document search, BM25, TF-IDF, ChromaDB, Instructor Embedding, Sentence Transformers, legal RAG, deep learning legal system, AI in legal system.
-
-## Citation
-
-```bibtex
-@thesis{ngo2023legalai,
-  title  = {Deep Learning in Legal System: Opportunities and Challenges},
-  author = {Ngo Phu Thinh},
-  year   = {2023},
-  school = {University of Science, Vietnam National University Ho Chi Minh City},
-  type   = {Bachelor Thesis},
-  url    = {https://github.com/Th1nhNg0/luanvantotnghiep}
-}
-```
 
 ## Author
 
@@ -161,4 +166,4 @@ Vietnamese legal AI, Vietnamese legal question answering, Vietnamese law retriev
 
 ## Notes
 
-This was an academic thesis project built with limited time, hardware, and data. The project can be improved further with larger datasets, stronger embedding models, better Vietnamese legal corpora, and more advanced retrieval methods such as Dense Passage Retrieval or modern RAG pipelines.
+This was an academic thesis project built with limited time, hardware, and data. It can be improved further with larger datasets, stronger embedding models, better Vietnamese legal corpora, and more advanced retrieval methods such as Dense Passage Retrieval or modern RAG pipelines.
