@@ -100,10 +100,10 @@ This showed that domain-specific fine-tuning can greatly improve retrieval quali
 
 ```txt
 .
-├── code/              # Source code and experiments
-├── document/          # Thesis document and related files
-├── LuanVan.pptx       # Thesis presentation
-└── readme.md          # Repository overview
+├── code/                         # Source code and experiments
+├── document/                     # Thesis document and related files
+├── presentation-slide.pptx       # Thesis presentation
+└── readme.md                     # Repository overview
 ```
 
 ## Technologies Used
